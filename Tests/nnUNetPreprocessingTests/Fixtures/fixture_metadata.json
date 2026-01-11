@@ -1,0 +1,103 @@
+{
+  "input_file": "synthetic_volume",
+  "configuration": "3d_fullres",
+  "stages": {
+    "01_raw": {
+      "shape": [
+        32,
+        64,
+        64
+      ],
+      "spacing": [
+        2.5,
+        0.7,
+        0.7
+      ],
+      "dtype": "float32"
+    },
+    "02_transposed": {
+      "shape": [
+        32,
+        64,
+        64
+      ],
+      "spacing": [
+        2.5,
+        0.7,
+        0.7
+      ],
+      "transpose_axes": [
+        0,
+        1,
+        2
+      ]
+    },
+    "03_cropped": {
+      "shape": [
+        32,
+        64,
+        64
+      ],
+      "bbox": [
+        [
+          0,
+          32
+        ],
+        [
+          0,
+          64
+        ],
+        [
+          0,
+          64
+        ]
+      ]
+    },
+    "04_normalized": {
+      "shape": [
+        32,
+        64,
+        64
+      ],
+      "spacing": [
+        2.5,
+        0.7,
+        0.7
+      ],
+      "mean": -15.694232940673828,
+      "std": 11.290778160095215,
+      "min": -22.40039825439453,
+      "max": 11.88479232788086
+    },
+    "05_resampled": {
+      "shape": [
+        80,
+        90,
+        90
+      ],
+      "target_spacing": [
+        1.0,
+        0.5,
+        0.5
+      ],
+      "original_spacing": [
+        2.5,
+        0.7,
+        0.7
+      ],
+      "resample_kwargs": {
+        "is_seg": false,
+        "order": 3,
+        "order_z": 0,
+        "force_separate_z": null
+      }
+    }
+  },
+  "checksums": {
+    "01_raw": "b3a99bd357d824959f2bec4bfbf819db",
+    "02_transposed": "b3a99bd357d824959f2bec4bfbf819db",
+    "03_cropped": "b3a99bd357d824959f2bec4bfbf819db",
+    "04_normalized": "161ac054812d84c5517858b9d2cad037",
+    "05_resampled": "1bf63b26b05bc6b1c3eb1e33b34a5f67"
+  }
+}

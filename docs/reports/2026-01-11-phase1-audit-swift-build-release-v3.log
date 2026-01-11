@@ -1,0 +1,6 @@
+[0/1] Planning build
+[1/1] Compiling plugin MTKShaderPlugin
+Building for production...
+[1/2] Write swift-version--58304C5D6DBC2206.txt
+[2/3] Copying MTK.metallib
+Build complete! (3.20s)

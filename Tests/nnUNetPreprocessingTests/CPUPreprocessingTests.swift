@@ -249,4 +249,26 @@ final class CPUPreprocessingTests: XCTestCase {
         XCTAssertEqual(result.shape.height, 8)
         XCTAssertEqual(result.shape.width, 8)
     }
+
+    func testResamplingTargetShapeUsesBankersRounding() {
+        let size = 5
+        let voxelCount = size * size * size
+        let floats = [Float](repeating: 1.0, count: voxelCount)
+        let data = floats.withUnsafeBytes { Data($0) }
+        let volume = VolumeBuffer(
+            data: data,
+            shape: (depth: size, height: size, width: size),
+            spacing: SIMD3(1.0, 1.0, 1.0)
+        )
+
+        let result = Resampling.apply(
+            volume,
+            targetSpacing: SIMD3(2.0, 2.0, 2.0),
+            forceSeparateZ: false
+        )
+
+        XCTAssertEqual(result.shape.depth, 2)
+        XCTAssertEqual(result.shape.height, 2)
+        XCTAssertEqual(result.shape.width, 2)
+    }
 }

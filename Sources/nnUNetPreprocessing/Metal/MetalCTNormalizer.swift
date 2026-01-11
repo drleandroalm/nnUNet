@@ -18,8 +18,7 @@ public actor MetalCTNormalizer {
         }
         self.commandQueue = queue
 
-        // Load shader from bundle
-        guard let library = try? device.makeDefaultLibrary(bundle: Bundle.module) else {
+        guard let library = PreprocessingShaderLibraryLoader.makeDefaultLibrary(on: device) else {
             throw MetalError.failedToLoadLibrary
         }
 
@@ -90,9 +89,6 @@ public actor MetalCTNormalizer {
         encoder.dispatchThreadgroups(threadgroups, threadsPerThreadgroup: threadgroupSize)
         encoder.endEncoding()
 
-        commandBuffer.commit()
-
-        // Wait for completion using async-safe API
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             commandBuffer.addCompletedHandler { buffer in
                 if let error = buffer.error {
@@ -101,6 +97,7 @@ public actor MetalCTNormalizer {
                     continuation.resume(returning: ())
                 }
             }
+            commandBuffer.commit()
         }
 
         // Extract output data

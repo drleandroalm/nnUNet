@@ -24,7 +24,14 @@ let package = Package(
                 .product(name: "DicomCore", package: "DICOM-Decoder"),
                 .product(name: "MTKCore", package: "MTK"),
             ],
-            exclude: ["CLAUDE.md"],
+            exclude: [
+                "CLAUDE.md",
+                "Bridge/CLAUDE.md",
+                "CPU/CLAUDE.md",
+                "Metal/CLAUDE.md",
+                "Metal/Shaders/CLAUDE.md",
+                "Models/CLAUDE.md",
+            ],
             resources: [
                 .process("Metal/Shaders")
             ]
@@ -32,7 +39,11 @@ let package = Package(
         .testTarget(
             name: "nnUNetPreprocessingTests",
             dependencies: ["nnUNetPreprocessing"],
-            exclude: ["CLAUDE.md"],
+            exclude: [
+                "CLAUDE.md",
+                "Helpers/CLAUDE.md",
+                "Fixtures/CLAUDE.md",
+            ],
             resources: [
                 .process("Fixtures")
             ]

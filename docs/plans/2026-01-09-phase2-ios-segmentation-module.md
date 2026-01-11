@@ -19,12 +19,12 @@
 **Required Dependencies:**
 - Phase 1 complete (Metal preprocessing pipeline)
 - Trained nnUNet model converted to .mlmodel
-- Niivue iOS app at `/Users/leandroalmeida/niivue-ios-foundation/iOS/studies-tab-library/NiiVue/NiiVue`
+- Niivue iOS app at `/Users/leandroalmeida/niivue/ios/NiiVue`
 
 **Setup Before Starting:**
 ```bash
 # Navigate to Niivue app directory
-cd /Users/leandroalmeida/niivue-ios-foundation/iOS/studies-tab-library/NiiVue/NiiVue
+cd /Users/leandroalmeida/niivue/ios/NiiVue
 
 # Create feature branch
 git checkout -b feature/segmentation-module
@@ -914,10 +914,10 @@ final class SegmentationTabViewTests: XCTestCase {
         try await super.setUp()
 
         continueAfterFailure = false
-        app = XCUIApplication()
-        app.launchArguments = ["--ui-testing"]
-        app.launch()
-    }
+    app = XCUIApplication()
+    app.launchArguments = ["--ui-test"]
+    app.launch()
+}
 
     func testSegmentationTabExists() {
         // Navigate to Segmentation tab

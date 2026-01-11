@@ -22,8 +22,7 @@ public actor MetalResampler {
         }
         self.commandQueue = queue
 
-        // Load shader library from bundle
-        guard let library = try? device.makeDefaultLibrary(bundle: Bundle.module) else {
+        guard let library = PreprocessingShaderLibraryLoader.makeDefaultLibrary(on: device) else {
             throw MetalError.failedToLoadLibrary
         }
 
@@ -65,9 +64,9 @@ public actor MetalResampler {
         // Compute target shape
         let scaleFactors = currentSpacing / targetSpacing
         let targetShape = (
-            depth: Int(round(Double(volume.shape.depth) * scaleFactors.x)),
-            height: Int(round(Double(volume.shape.height) * scaleFactors.y)),
-            width: Int(round(Double(volume.shape.width) * scaleFactors.z))
+            depth: Int((Double(volume.shape.depth) * scaleFactors.x).rounded(.toNearestOrEven)),
+            height: Int((Double(volume.shape.height) * scaleFactors.y).rounded(.toNearestOrEven)),
+            width: Int((Double(volume.shape.width) * scaleFactors.z).rounded(.toNearestOrEven))
         )
 
         // Determine if we should use separate-Z resampling
@@ -164,9 +163,6 @@ public actor MetalResampler {
         encoder.dispatchThreadgroups(threadgroups, threadsPerThreadgroup: threadgroupSize)
         encoder.endEncoding()
 
-        commandBuffer.commit()
-
-        // Wait for completion
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             commandBuffer.addCompletedHandler { buffer in
                 if let error = buffer.error {
@@ -175,6 +171,7 @@ public actor MetalResampler {
                     continuation.resume(returning: ())
                 }
             }
+            commandBuffer.commit()
         }
 
         // Extract output data
@@ -303,9 +300,6 @@ public actor MetalResampler {
         encoder2.dispatchThreadgroups(threadgroupsZ, threadsPerThreadgroup: threadgroupSizeZ)
         encoder2.endEncoding()
 
-        commandBuffer.commit()
-
-        // Wait for completion
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             commandBuffer.addCompletedHandler { buffer in
                 if let error = buffer.error {
@@ -314,6 +308,7 @@ public actor MetalResampler {
                     continuation.resume(returning: ())
                 }
             }
+            commandBuffer.commit()
         }
 
         // Extract output data

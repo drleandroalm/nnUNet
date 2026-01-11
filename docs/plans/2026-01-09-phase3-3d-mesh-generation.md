@@ -24,10 +24,10 @@
 **Setup Before Starting:**
 ```bash
 # Navigate to Niivue app directory
-cd /Users/leandroalmeida/niivue-ios-foundation/iOS/studies-tab-library/NiiVue/NiiVue
+cd /Users/leandroalmeida/niivue/ios/NiiVue
 
 # Verify SceneKit availability
-swift -c "import SceneKit; print('SceneKit available')"
+swift -e 'import SceneKit; print("SceneKit available")'
 
 # Create feature branch
 git checkout -b feature/3d-mesh-generation

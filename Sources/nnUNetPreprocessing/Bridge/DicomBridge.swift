@@ -42,7 +42,7 @@ public struct DicomBridge: Sendable {
             data: float32Data,
             shape: (depth: volume.depth, height: volume.height, width: volume.width),
             spacing: SIMD3(volume.spacing.z, volume.spacing.y, volume.spacing.x),
-            origin: SIMD3(volume.origin.z, volume.origin.y, volume.origin.x),
+            origin: volume.origin,
             orientation: volume.orientation
         )
     }

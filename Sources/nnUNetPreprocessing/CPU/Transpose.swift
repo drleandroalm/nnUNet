@@ -38,7 +38,7 @@ public struct Transpose: Sendable {
                 let src = srcBuffer.bindMemory(to: Float.self)
                 let dst = dstBuffer.bindMemory(to: Float.self)
 
-                let oldD = oldShape[0], oldH = oldShape[1], oldW = oldShape[2]
+                let oldH = oldShape[1], oldW = oldShape[2]
                 let newD = newShape.depth, newH = newShape.height, newW = newShape.width
 
                 // Compute inverse permutation for source indexing

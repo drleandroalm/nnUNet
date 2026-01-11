@@ -28,9 +28,9 @@ public struct Resampling: Sendable {
         // Compute target shape
         let scaleFactors = currentSpacing / targetSpacing
         let targetShape = (
-            depth: Int(round(Double(volume.shape.depth) * scaleFactors.x)),
-            height: Int(round(Double(volume.shape.height) * scaleFactors.y)),
-            width: Int(round(Double(volume.shape.width) * scaleFactors.z))
+            depth: Int((Double(volume.shape.depth) * scaleFactors.x).rounded(.toNearestOrEven)),
+            height: Int((Double(volume.shape.height) * scaleFactors.y).rounded(.toNearestOrEven)),
+            width: Int((Double(volume.shape.width) * scaleFactors.z).rounded(.toNearestOrEven))
         )
 
         // Determine if we should use separate-Z resampling

@@ -1,0 +1,120 @@
+[0/1] Planning build
+[1/1] Compiling plugin MTKShaderPlugin
+Building for debugging...
+[1/5] Write sources
+[3/5] Write swift-version--58304C5D6DBC2206.txt
+[4/6] Copying MTK.metallib
+[6/8] Emitting module nnUNetPreprocessing
+[7/8] Compiling nnUNetPreprocessing Transpose.swift
+[8/11] Compiling nnUNetPreprocessingTests CPUPreprocessingTests.swift
+[9/11] Emitting module nnUNetPreprocessingTests
+[9/11] Write Objects.LinkFileList
+[10/11] Linking nnUNetPreprocessingPackageTests
+Build complete! (6.29s)
+Test Suite 'All tests' started at 2026-01-11 05:49:08.978.
+Test Suite 'nnUNetPreprocessingPackageTests.xctest' started at 2026-01-11 05:49:08.985.
+Test Suite 'CPUPreprocessingTests' started at 2026-01-11 05:49:08.985.
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testCropToNonzeroAllNonzero]' started.
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testCropToNonzeroAllNonzero]' passed (0.004 seconds).
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testCropToNonzeroWithPadding]' started.
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testCropToNonzeroWithPadding]' passed (0.001 seconds).
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testCTNormalization]' started.
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testCTNormalization]' passed (0.000 seconds).
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testResamplingAnisotropyDetection]' started.
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testResamplingAnisotropyDetection]' passed (0.000 seconds).
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testResamplingDownsample]' started.
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testResamplingDownsample]' passed (0.000 seconds).
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testResamplingSeparateZ]' started.
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testResamplingSeparateZ]' passed (0.002 seconds).
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testResamplingTargetShapeUsesBankersRounding]' started.
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testResamplingTargetShapeUsesBankersRounding]' passed (0.000 seconds).
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testResamplingUpsample]' started.
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testResamplingUpsample]' passed (0.002 seconds).
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testTransposeIdentity]' started.
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testTransposeIdentity]' passed (0.000 seconds).
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testTransposeReverse]' started.
+Test Case '-[nnUNetPreprocessingTests.CPUPreprocessingTests testTransposeReverse]' passed (0.000 seconds).
+Test Suite 'CPUPreprocessingTests' passed at 2026-01-11 05:49:08.997.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.010 (0.011) seconds
+Test Suite 'DicomBridgeTests' started at 2026-01-11 05:49:08.997.
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testBoundingBoxCodable]' started.
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testBoundingBoxCodable]' passed (0.003 seconds).
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testBoundingBoxCreation]' started.
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testBoundingBoxCreation]' passed (0.000 seconds).
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testHUConversionLogicSigned]' started.
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testHUConversionLogicSigned]' passed (0.001 seconds).
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testHUConversionLogicUnsigned]' started.
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testHUConversionLogicUnsigned]' passed (0.000 seconds).
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testHUConversionLogicWithRescale]' started.
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testHUConversionLogicWithRescale]' passed (0.000 seconds).
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testVolumeBufferCreation]' started.
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testVolumeBufferCreation]' passed (0.000 seconds).
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testVolumeBufferEquality]' started.
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testVolumeBufferEquality]' passed (0.000 seconds).
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testVolumeBufferWithFloatPointer]' started.
+Test Case '-[nnUNetPreprocessingTests.DicomBridgeTests testVolumeBufferWithFloatPointer]' passed (0.000 seconds).
+Test Suite 'DicomBridgeTests' passed at 2026-01-11 05:49:09.001.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+Test Suite 'FixtureValidationTests' started at 2026-01-11 05:49:09.001.
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testCropToNonzeroMatchesPythonFixture]' started.
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testCropToNonzeroMatchesPythonFixture]' passed (0.057 seconds).
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testCTNormalizationMatchesPythonFixture]' started.
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testCTNormalizationMatchesPythonFixture]' passed (0.050 seconds).
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testFixturesLoadSuccessfully]' started.
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testFixturesLoadSuccessfully]' passed (0.005 seconds).
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testFullPipelineMatchesPythonOutput]' started.
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testFullPipelineMatchesPythonOutput]' passed (1.561 seconds).
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testMetalNormalizationMatchesCPU]' started.
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testMetalNormalizationMatchesCPU]' passed (0.126 seconds).
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testMetalResamplingMatchesCPU]' started.
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testMetalResamplingMatchesCPU]' passed (1.552 seconds).
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testParamsMatchMetadata]' started.
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testParamsMatchMetadata]' passed (0.000 seconds).
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testResamplingMatchesPythonFixture]' started.
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testResamplingMatchesPythonFixture]' passed (1.526 seconds).
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testTransposeMatchesPythonFixture]' started.
+Test Case '-[nnUNetPreprocessingTests.FixtureValidationTests testTransposeMatchesPythonFixture]' passed (0.017 seconds).
+Test Suite 'FixtureValidationTests' passed at 2026-01-11 05:49:13.896.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 4.894 (4.894) seconds
+Test Suite 'MetalCTNormalizationTests' started at 2026-01-11 05:49:13.896.
+Test Case '-[nnUNetPreprocessingTests.MetalCTNormalizationTests testMetalNormalizationClipping]' started.
+Test Case '-[nnUNetPreprocessingTests.MetalCTNormalizationTests testMetalNormalizationClipping]' passed (0.001 seconds).
+Test Case '-[nnUNetPreprocessingTests.MetalCTNormalizationTests testMetalNormalizationLargeVolume]' started.
+Test Case '-[nnUNetPreprocessingTests.MetalCTNormalizationTests testMetalNormalizationLargeVolume]' passed (0.129 seconds).
+Test Case '-[nnUNetPreprocessingTests.MetalCTNormalizationTests testMetalNormalizationMatchesCPU]' started.
+Test Case '-[nnUNetPreprocessingTests.MetalCTNormalizationTests testMetalNormalizationMatchesCPU]' passed (0.001 seconds).
+Test Suite 'MetalCTNormalizationTests' passed at 2026-01-11 05:49:14.027.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.131 (0.132) seconds
+Test Suite 'MetalResamplingTests' started at 2026-01-11 05:49:14.027.
+Test Case '-[nnUNetPreprocessingTests.MetalResamplingTests testMetalResamplingLargeVolume]' started.
+Test Case '-[nnUNetPreprocessingTests.MetalResamplingTests testMetalResamplingLargeVolume]' passed (5.331 seconds).
+Test Case '-[nnUNetPreprocessingTests.MetalResamplingTests testMetalResamplingMatchesCPU]' started.
+Test Case '-[nnUNetPreprocessingTests.MetalResamplingTests testMetalResamplingMatchesCPU]' passed (0.003 seconds).
+Test Case '-[nnUNetPreprocessingTests.MetalResamplingTests testMetalResamplingPreservesConstantVolume]' started.
+Test Case '-[nnUNetPreprocessingTests.MetalResamplingTests testMetalResamplingPreservesConstantVolume]' passed (0.007 seconds).
+Test Case '-[nnUNetPreprocessingTests.MetalResamplingTests testMetalSeparateZMatchesCPU]' started.
+Test Case '-[nnUNetPreprocessingTests.MetalResamplingTests testMetalSeparateZMatchesCPU]' passed (0.014 seconds).
+Test Suite 'MetalResamplingTests' passed at 2026-01-11 05:49:19.384.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 5.356 (5.356) seconds
+Test Suite 'nnUNetPreprocessingTests' started at 2026-01-11 05:49:19.384.
+Test Case '-[nnUNetPreprocessingTests.nnUNetPreprocessingTests testVersionExists]' started.
+Test Case '-[nnUNetPreprocessingTests.nnUNetPreprocessingTests testVersionExists]' passed (0.000 seconds).
+Test Suite 'nnUNetPreprocessingTests' passed at 2026-01-11 05:49:19.384.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'nnUNetPreprocessingPackageTests.xctest' passed at 2026-01-11 05:49:19.384.
+	 Executed 35 tests, with 0 failures (0 unexpected) in 10.395 (10.398) seconds
+Test Suite 'All tests' passed at 2026-01-11 05:49:19.384.
+	 Executed 35 tests, with 0 failures (0 unexpected) in 10.395 (10.405) seconds
+End-to-end pipeline comparison:
+  MAE: 0.31211472
+  Max Error: 34.832886
+Metal vs CPU resampling:
+  MAE: 6.3562093e-06
+  Max Error: 0.00012540817
+Resampling comparison:
+  MAE: 0.31211472
+  Max Error: 34.832886
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

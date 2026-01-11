@@ -780,9 +780,12 @@ All tests pass on both iOS 26+ and macOS 26+ simulators/devices.
 
 **Test Results Summary:**
 - ✅ DicomBridgeTests: 8/8 passing
-- ✅ CPUPreprocessingTests: 11/11 passing
+- ✅ CPUPreprocessingTests: 10/10 passing
+- ✅ FixtureValidationTests: 9/9 passing
 - ✅ MetalCTNormalizationTests: 3/3 passing
-- ✅ Total: 22/22 passing
+- ✅ MetalResamplingTests: 4/4 passing
+- ✅ nnUNetPreprocessingTests: 1/1 passing
+- ✅ Total: 35/35 passing
 
 **Fixture Validation:**
 - Python-generated fixtures available in `Tests/nnUNetPreprocessingTests/Fixtures/`
@@ -791,28 +794,7 @@ All tests pass on both iOS 26+ and macOS 26+ simulators/devices.
 
 ---
 
-## Known Limitations
-
-### Deferred to Later Tasks
-
-The following items are intentionally deferred to Tasks 7-9 and documented for future implementation:
-
-1. **Metal Resampling (Task 7):**
-   - Currently only CPU cubic B-spline resampling is implemented
-   - Metal shader for resampling will parallelize across voxels for ~10-50x speedup
-   - Texture sampling approach vs compute shader to be evaluated
-
-2. **Pipeline Integration (Task 8):**
-   - Individual components implemented but not yet orchestrated into single pipeline
-   - `PreprocessingPipeline.swift` to provide unified API
-   - Error handling and progress reporting to be added
-
-3. **Fixture Validation Tests (Task 9):**
-   - `FixtureValidationTests.swift` not yet implemented
-   - Will load NumPy fixtures and validate Swift implementation against Python ground truth
-   - End-to-end validation of entire pipeline
-
-### Current Caveats
+## Current Caveats
 
 1. **DicomBridge Testing:**
    - `DicomSeriesVolume` has internal initializer, so tests validate conversion logic separately

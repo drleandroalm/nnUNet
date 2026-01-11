@@ -86,7 +86,7 @@ nnUNetPreprocessing/
 ### Tech Stack
 
 - **Swift 6.2+**
-- **iOS 26+ / macOS 15+**
+- **iOS 26+ / macOS 26+**
 - **Metal 4**
 - **Python 3.10+** (for fixture generation)
 
@@ -236,7 +236,7 @@ let package = Package(
     name: "nnUNetPreprocessing",
     platforms: [
         .iOS(.v26),
-        .macOS(.v15)
+        .macOS(.v26)
     ],
     products: [
         .library(
